@@ -15,6 +15,8 @@ function getLocation() {
 function showPosition(position) {
 var latitud = position.coords.latitude;
 var longitud= position.coords.longitude;
+console.log(latitud)
+console.log(longitud)
 
 }
 
@@ -29,8 +31,8 @@ var longitud= position.coords.longitude;
 
 <script>getLocation()</script>
 <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
-    <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
-    <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude:12.9090821;longitude:80.230132634" scale="50 50 50"></a-entity>
+    <a-camera gps-new-camera='gpsMinDistance: 2'></a-camera>
+    <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: 12.9138688; longitude: 80.2193408" scale="50 50 50"></a-entity>
 </a-scene>
 </body>
 </html>
