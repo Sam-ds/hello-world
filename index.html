@@ -3,13 +3,36 @@
 <head>
 <title>AR.js A-Frame Location-based</title>
 <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script type='text/javascript' >
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+var latitud = position.coords.latitude;
+var longitud= position.coords.longitude;
+
+  alert("Latitude: " + position.coords.latitude +
+  "\n Longitude: " + position.coords.longitude);
+}
+
+
+
+
+</script>
 <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
 <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
 </head>
 <body>
+
+<script>getLocation()</script>
 <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
     <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
-    <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude:12.90899; longitude:80.23031" scale="10 10 10"></a-entity>
+    <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude:$latitud;longitude:$longitud" scale="50 50 50"></a-entity>
 </a-scene>
 </body>
 </html>
