@@ -14,17 +14,21 @@
       vr-mode-ui="enabled: false"
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
     >
-<!--      <a-text-->
-<!--        value="Hi there!."-->
-<!--        look-at="[gps-camera]"-->
-<!--        scale="50 100 50"-->
+      <a-text
+        value="Hi there!."
+        look-at="[gps-camera]"
+        scale="5 5 5"
+        gps-entity-place="latitude: 12.90894812; longitude: 80.3199602;"
 
-<!--      ></a-text>-->
+      ></a-text>
          <a-entity
-            position="1 1 0"
-            scale="0.2 0.1 0.2"
-            gps-entity-place="latitude: 12.90894812; longitude: 80.2299602;"
-            gltf-model="./images/CoffeeMaker.glb"
+            position="1 0 0"
+            scale=" 0.03 0.03 0.03"
+
+
+            gltf-model="./assets/Dragon_2.5_For_Animations.glb"
+                    gps-entity-place="latitude: 12.90894812; longitude: 80.3299602;"
+
             ></a-entity>
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
